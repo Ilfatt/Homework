@@ -2,5 +2,5 @@
 
 public interface IRange<T>
 {
-    bool HasValue(T value);
+    bool InRange(T value);
 }

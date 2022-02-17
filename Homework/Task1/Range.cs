@@ -10,7 +10,7 @@
         public T RangeStart { get; set; }
         public T RangeEnd { get; set; }
 
-        public bool HasValue(T value)
+        public bool InRange(T value)
         {
             if (Comparer<T>.Default.Compare(RangeStart, value) >= 0 && Comparer<T>.Default.Compare(RangeEnd, value) <= 0
                 || Comparer<T>.Default.Compare(RangeStart, value) == 0 || Comparer<T>.Default.Compare(RangeEnd, value) == 0)
