@@ -1,6 +1,6 @@
 ﻿namespace Task1;
 
-public interface IComparable<T>
+public interface IRange<T>
 {
     bool HasValue(T value);
 }

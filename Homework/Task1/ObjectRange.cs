@@ -2,27 +2,27 @@
 
 public class ObjectRange
 {
-    public ObjectRange(object from, object to)
+    public ObjectRange(object rangeStart, object rangeEnd)
     {
-        From = from;
-        To = to;
+        RangeStart = rangeStart;
+        RangeEnd = rangeEnd;
     }
-    public object From { get; set; }
-    public object To { get; set; }
+    public object RangeStart { get; set; }
+    public object RangeEnd { get; set; }
 
-    public bool HasValue(object value)
+    public bool InRange(object value)
     {
-        if (Comparer<object>.Default.Compare(From, value) >= 0 && Comparer<object>.Default.Compare(To, value) <= 0
-            || Comparer<object>.Default.Compare(From, value) == 0 || Comparer<object>.Default.Compare(To, value) == 0)
+        if (Comparer<object>.Default.Compare(RangeStart, value) >= 0 && Comparer<object>.Default.Compare(RangeEnd, value) <= 0
+            || Comparer<object>.Default.Compare(RangeStart, value) == 0 || Comparer<object>.Default.Compare(RangeEnd, value) == 0)
         {
-            Console.WriteLine($"{value} входит в промежуток от {From} до {To}");
+            Console.WriteLine($"{value} входит в промежуток от {RangeStart} до {RangeEnd}");
         }
         else
         {
-            Console.WriteLine($"{value} не входит в промежуток от {From} до {To}");
+            Console.WriteLine($"{value} не входит в промежуток от {RangeStart} до {RangeEnd}");
         }
 
-        return Comparer<object>.Default.Compare(From, value) <= 0 && Comparer<object>.Default.Compare(To, value) >= 0
-               || Comparer<object>.Default.Compare(From, value) == 0 || Comparer<object>.Default.Compare(To, value) == 0;
+        return Comparer<object>.Default.Compare(RangeStart, value) <= 0 && Comparer<object>.Default.Compare(RangeEnd, value) >= 0
+               || Comparer<object>.Default.Compare(RangeStart, value) == 0 || Comparer<object>.Default.Compare(RangeEnd, value) == 0;
     }
 }

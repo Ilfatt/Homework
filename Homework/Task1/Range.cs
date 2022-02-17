@@ -1,28 +1,28 @@
 ﻿namespace Task1
 {
-    public struct Range<T> : IComparable<T>
+    public struct Range<T> : IRange<T>
     {
-        public Range(T from, T to)
+        public Range(T rangeStart, T rangeEnd)
         {
-            From = from;
-            To = to;
+            RangeStart = rangeStart;
+            RangeEnd = rangeEnd;
         }
-        public T From { get; set; }
-        public T To { get; set; }
+        public T RangeStart { get; set; }
+        public T RangeEnd { get; set; }
 
         public bool HasValue(T value)
         {
-            if (Comparer<T>.Default.Compare(From, value) >= 0 && Comparer<T>.Default.Compare(To, value) <= 0
-                || Comparer<T>.Default.Compare(From, value) == 0 || Comparer<T>.Default.Compare(To, value) == 0)
+            if (Comparer<T>.Default.Compare(RangeStart, value) >= 0 && Comparer<T>.Default.Compare(RangeEnd, value) <= 0
+                || Comparer<T>.Default.Compare(RangeStart, value) == 0 || Comparer<T>.Default.Compare(RangeEnd, value) == 0)
             {
-                Console.WriteLine($"{value} входит в промежуток от {From} до {To}");
+                Console.WriteLine($"{value} входит в промежуток от {RangeStart} до {RangeEnd}");
             }
             else
             {
-                Console.WriteLine($"{value} не входит в промежуток от {From} до {To}");
+                Console.WriteLine($"{value} не входит в промежуток от {RangeStart} до {RangeEnd}");
             }
-            return Comparer<T>.Default.Compare(From, value) <= 0 && Comparer<T>.Default.Compare(To, value) >= 0
-                   || Comparer<T>.Default.Compare(From, value) == 0 || Comparer<T>.Default.Compare(To, value) == 0;
+            return Comparer<T>.Default.Compare(RangeStart, value) <= 0 && Comparer<T>.Default.Compare(RangeEnd, value) >= 0
+                   || Comparer<T>.Default.Compare(RangeStart, value) == 0 || Comparer<T>.Default.Compare(RangeEnd, value) == 0;
         }
     }
 }
