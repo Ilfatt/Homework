@@ -5,6 +5,14 @@
     /// </summary>
     public abstract class Computer : ISellable
     {
+        protected static Dictionary<string, int> MinCost = new Dictionary<string, int>
+        {
+            ["GamingLaptop"] = 90000,
+            ["Macbook"] = 90000,
+            ["Pc"] = 30000,
+            ["Server"] = 300000
+        };
+
         /// <summary>
         /// Метод для продажи
         /// </summary>
@@ -19,7 +27,7 @@
         /// <summary>
         /// Цена
         /// </summary>
-        public int Cost { get; protected set; }
+        public int Cost { get; protected set; } 
 
         /// <summary>
         /// Дата сборки

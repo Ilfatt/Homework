@@ -10,13 +10,13 @@ public class Pc : StationaryComputer
     /// <summary>
     /// Конструктор создающий персональные компьютеры 
     /// </summary>
-    public Pc(int age, int cost, string vendorCpu, int _RAM, int agePeriphery)
+    public Pc(int age,  string vendorCpu, int _RAM, int agePeriphery)
     {
         Age = age;
-        Cost = cost;
         VendorCpu = vendorCpu;
         RAM = _RAM;
         AgePeriphery = agePeriphery;
+        Cost = MinCost.GetValueOrDefault("Pc");
     }
 
     /// <summary>

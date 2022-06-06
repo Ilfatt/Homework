@@ -15,12 +15,12 @@ public class GamingLaptop : Laptop
     /// <summary>
     /// Конструктор для создания игровых ноутбуков 
     /// </summary>
-    public GamingLaptop(int age, int cost, bool backlight, double weight)
+    public GamingLaptop(int age, bool backlight, double weight)
     {
         Age = age;
         Weight = weight;
         Backlight = backlight;
-        Cost = cost;
+        Cost = MinCost.GetValueOrDefault("GamingLaptop");
     }
 
     /// <summary>

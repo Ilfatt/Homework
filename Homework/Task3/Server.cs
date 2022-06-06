@@ -10,12 +10,12 @@ public class Server : StationaryComputer
     /// <summary>
     /// Конструктор серверов
     /// </summary>
-    public Server(int cost, string vendorCpu, int _RAM, int countCpu)
+    public Server( string vendorCpu, int _RAM, int countCpu)
     {
-        Cost = cost;
         VendorCpu = vendorCpu;
         RAM = _RAM;
         CountCpu = countCpu;
+        Cost = MinCost.GetValueOrDefault("Server");
     }
 
     /// <summary>

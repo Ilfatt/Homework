@@ -5,7 +5,7 @@ namespace Task3;
 /// <summary>
 ///  Класс Макбук
 /// </summary>
-public class Mackbook : Laptop
+public class Macbook : Laptop
 {
     /// <summary>
     /// Заменить батарею
@@ -24,12 +24,12 @@ public class Mackbook : Laptop
     /// <summary>
     /// Конструктор для создания Мукбука 
     /// </summary>
-    public Mackbook(int age, int cost, bool touchBar, double weight)
+    public Macbook(int age, bool touchBar, double weight)
     {
         Age = age;
-        Cost = cost;
         TouchBar = touchBar;
         Weight = weight;
+        Cost = MinCost.GetValueOrDefault("Macbook");
     }
 
     /// <summary>
